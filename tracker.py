@@ -13,15 +13,15 @@ def trackObjects(file_name):
     file_name : str
     - Path to MP4 file
 
-    placeholder : Streamlit placeholder
-
     Returns
     -------
     df : pandas.DataFrame
     - Objects tracked
     """
     # Load the pre-trained YOLO model
-    model = YOLO('yolov8n.pt')
+    model = YOLO('yolov8n-seg.pt')
+    # Standard Bounding Box (yolov8n.pt) for regular rectangles
+    # Instance Segmentation (yolov78n-seg.pt) for polygon masks pixel-by-pixel
 
     # Open the video
     cap = cv2.VideoCapture(file_name)
@@ -70,10 +70,6 @@ def trackObjects(file_name):
         
         # YOLO automatically draws bounding boxes on the frame for you
         annotated_frame = results[0].plot()
-
-        # Convert BGR (OpenCV format) to RGB (Streamlit format)
-        # annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)
-        # placeholder.image(annotated_frame, channels="RGB")
 
         # Save the frame
         out.write(annotated_frame)

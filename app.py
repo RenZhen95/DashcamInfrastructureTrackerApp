@@ -1,9 +1,10 @@
+import os
 import tempfile
 import streamlit as st
 
 from tracker import trackObjects
 
-st.title("🚦 Dashcam Infrastructure Tracker")
+st.title("Dashcam Infrastructure Tracker")
 st.write("Upload a dashcam video or use the built-in demo to automatically detect and track vehicles and infrastructure.")
 
 _filepath = None
@@ -19,7 +20,10 @@ with col2:
     use_demo = st.button("▶️ Run Demo Video") # returns Boolean
 
 if use_demo:
-    _filepath = "demo.mp4"
+    _filepath = "input.mp4"
+
+# Consider working with dataset from https://www.kaggle.com/datasets/aliabdelmenam/rdd-2022
+# for road damage
 
 if uploaded_file is not None:
     # Save the uploaded file to a temporary location so OpenCV can read it
@@ -30,9 +34,6 @@ if uploaded_file is not None:
 if _filepath is not None:
     st.info("Processing Video... Please wait.")
 
-    # Create an empty placeholder in the UI to stream the video frames
-    # frame_placeholder = st.empty()
-    
     df, out_path = trackObjects(_filepath)
     st.success("Processing Complete!")
 
