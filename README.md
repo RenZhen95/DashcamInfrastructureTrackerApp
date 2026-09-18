@@ -17,3 +17,12 @@ An end-to-end computer vision pipeline designed to extract structured traffic fl
  - **Web-Native Video Encoding:** Implemented the VP80 codec natively in OpenCV, allowing the Streamlit frontend to render processed tracking video dynamically in any modern web browser.
  - **Telemetry Extraction Layer:** Automatically parses bounding box coordinates, confidence scores, and tracking IDs into relational pandas dataframes, creating a structured foundation for downstream spatial analysis.
  - **Continuous Deployment:** Fully managed via GitHub CD and hosted on Streamlit for instant stakeholder access.
+
+## Local Development
+
+```bash
+git clone https://github.com/RenZhen95/DashcamInfrastructureTrackerApp.git
+cd DashcamInfrastructureTrackerApp
+pip install -r requirements.txt
+streamlit run app.py
+```
