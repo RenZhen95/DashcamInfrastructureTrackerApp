@@ -4,12 +4,10 @@
 
 An end-to-end computer vision pipeline designed to extract structured traffic flow and infrastructure data from unstructured dashcam video. Built to demonstrate deployable AI for civil engineering and road condition monitoring, this application bridges the gap between raw pixel data and actionable municipal analytics.
 
-*Demo applied on dashcam video provided by the user K from Pexels: https://www.pexels.com/video/cars-traveling-on-expressway-5382495/*
-
+*Demo applied on dashcam video provided by the user [K from Pexels](https://www.pexels.com/video/cars-traveling-on-expressway-5382495/)*
 ![Demo](assets/demo.gif)
 
-*Screenshot of the live telemetry extraction in the Streamlit UI:*
-
+*Screenshot of the live telemetry extraction in the Streamlit UI*
 ![DemoTable](assets/demotable.png)
 
 
