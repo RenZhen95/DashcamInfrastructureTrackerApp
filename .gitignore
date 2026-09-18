@@ -13,3 +13,8 @@ wheels/
 # Pre-trained models
 yolo*
 
+# Files for pothole detecting fine-tuning
+PotholeDetection.zip
+pothole_dataset/*
+runs/*
+
